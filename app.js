@@ -26,7 +26,6 @@ smtp.on("dataReady", function(connection, callback){
 });
 
 
-expressApp.use('/', express.static('/tmp/mail'));
 expressApp.get('/inbox/:user', (req, res) => {
   let user = req.params.user;
    fs.readFile(`/tmp/mail/${user}@frank.cafe`, 'utf8', function (err,data) {
